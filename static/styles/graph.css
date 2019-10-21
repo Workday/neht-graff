@@ -1,0 +1,270 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+#interfaceGrid {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-gap: 0;
+    grid-template-columns: 150px auto auto auto 150px;
+    grid-template-rows: repeat(5, 40px) auto repeat(5, 40px);
+}
+
+#graphContainer {
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+div#searchBar {
+    grid-row: 1;
+    grid-column: 1 / span 5;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: right;
+    height: 40px;
+    border: none;
+    z-index: 5;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+}
+
+input.searchBox {
+    display: flex;
+    flex-grow: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: large;
+    border: none;
+    height: 40px;
+    background-color: black;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    z-index: 6;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+}
+
+button.searchButton {
+    width: 90px;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    height: 40px;
+    font-size: large;
+    font-weight: 200;
+    background-color: #000000;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 6;
+    transition-duration: 0.4s;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+}
+
+.searchButton:hover {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+#legend {
+    grid-row: 2 / span 4;
+    grid-column: 1;
+    display: block;
+    z-index: 10
+}
+
+.legendImage {
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    display: block;
+}
+
+.legendSvg {
+    width: 100%;
+    height: 100%;
+}
+
+#statisticsContainer {
+    grid-row: -2;
+    grid-column: 1;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    fill: none;
+    z-index: 5;
+    vertical-align: bottom;
+    position: relative;
+}
+
+#statisticsContainer p {
+    margin: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#statisticsContent {
+    vertical-align: bottom;
+    font-size: smaller;
+}
+
+
+#forceEditorButton {
+    grid-column: -2;
+    grid-row: -2;
+    z-index: 5;
+    width: 100%;
+    border: none;
+    height: 100%;
+    font-size: large;
+    font-weight: 200;
+    background-color: #000000;
+    opacity: 0.8;
+    color: rgba(255, 255, 255, 0.8);
+    transition-duration: 0.4s;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+}
+
+#forceEditor {
+    display: none;
+    grid-column: -2;
+    grid-row: -6 / span 4;
+    background-color: lightgray;
+    opacity: 0.9;
+    z-index: 5;
+}
+
+.tooltipContainer {
+    display: none;
+    border: none;
+    grid-gap: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+    background-color: transparent;
+    position: fixed;
+    z-index: 11;
+    height: auto;
+    max-width: 300px;
+    min-width: 60px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+}
+
+.tooltipQueryContainer {
+    width: auto;
+    height: 36px;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: transparent;
+    z-index: 13;
+    display: none;
+    grid-template-columns: auto 70px;
+    grid-template-rows: 36px;
+
+}
+
+.tooltipQueryLabel {
+    grid-row: 1;
+    grid-column: 1;
+    z-index: 14;
+    width: 100%;
+}
+
+.tooltipQueryBar {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: medium;
+    border: none;
+    background-color: #1f1f1f;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    z-index: 15;
+    height: 36px;
+    width: 100%;
+}
+
+.tooltipQuerySubmitButton {
+    grid-row: 1;
+    grid-column: 2;
+    font-family: 'Open Sans', sans-serif;
+    border: none;
+    font-size: medium;
+    font-weight: 200;
+    background-color: #1F1F1F;
+    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.8);
+    z-index: 15;
+}
+
+.tooltipQuerySubmitButton:hover {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+}
+
+
+.tooltipButtonContainer {
+    width: 100%;
+    height: 36px;
+    grid-row: 2;
+    grid-column: 1;
+    background-color: #2e2e2e;
+    z-index: 12;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: auto;
+}
+
+.tooltipButton {
+    width: 97%;
+    height: 33px;
+    background-color: #313131;
+    margin: auto;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+    transition-duration: 0.4s;
+}
+
+.tooltipButton:hover {
+    background-color: #484848;
+}
+
+.tooltipIcon {
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    display: block;
+}
+
+.tooltip {
+    background-color: #2e2e2e;
+    color: rgba(228, 228, 228, 0.8);
+    border: none;
+    z-index: 12;
+    opacity: .92;
+    grid-row: 3;
+    grid-column: 1;
+    padding: 2px;
+    overflow-y: scroll;
+    max-height: 200px;
+    min-width: inherit;
+}
+
+#graphSvg {
+    width: 100vw;
+    height: 100vh;
+    background-color: #dcdcdc;
+    position: fixed;
+    z-index: 4;
+}
+
+
+
+
+

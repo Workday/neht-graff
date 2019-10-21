@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html lang='en'>
+<head>
+    <title>Neht Graff</title>
+
+    <!-- Libraries -->
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <!-- Style -->
+    <link rel='stylesheet' href='{{ url_for('static',filename='styles/graph.css') }}'>
+    <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans&display=swap' rel='stylesheet'>
+    <!-- Icons -->
+    <link rel='icon' type='image/png' sizes='32x32' href='{{ url_for('static', filename='images/favicon-32x32.png') }}'>
+    <link rel='icon' type='image/png' sizes='16x16' href='{{ url_for('static', filename='images/favicon-16x16.png') }}'>
+</head>
+
+<body>
+    <svg id='graphSvg'></svg>
+    <section id='interfaceGrid'>
+        <div class='interfaceItem' id='searchBar'>
+        <form action='/' method='post'>
+            <input type='text' name='query' class='searchBox' placeholder='Enter query:'>
+            <button type='submit' class='searchButton'>
+                Submit
+            </button>
+        </form>
+        </div>
+        <div class='interfaceItem' id='legend'>
+            <img class='legendImage' src='{{ url_for('static', filename='images/Legend.svg')}}' alt='Legend'>
+        </div>
+        <div class='interfaceItem' id='statisticsContainer'>
+            <p id='statisticsContent'></p>
+        </div>
+        <button class='interfaceItem' id="forceEditorButton">
+            Force Editor
+        </button>
+        <div class='interfaceItem' id='forceEditor'></div>
+    </section>
+    <div class='tooltipContainer'>
+        <div class='tooltipQueryContainer'>
+            <label class='tooltipQueryLabel'>
+                <input type='text' name='pivot_query' class='tooltipQueryBar' placeholder='Enter query:'>
+            </label>
+            <button class='tooltipQuerySubmitButton'>
+                Submit
+            </button>
+        </div>
+        <div class='tooltipButtonContainer'>
+            <div class='tooltipButton' id='pivotButton'>
+                <img class='tooltipIcon'
+                     src='{{ url_for('static', filename='images/LightPivotIcon.svg') }}' alt='Pivot Icon'>
+            </div>
+            <div class='tooltipButton' id='unpinButton'>
+                <img class='tooltipIcon'
+                     src='{{ url_for('static', filename='images/LightPinIcon.svg') }}' alt='Pin Icon'>
+            </div>
+            <div class='tooltipButton' id='queryDisplayButton'>
+                <img class='tooltipIcon'
+                     src='{{ url_for('static', filename='images/LightQueryIcon.svg') }}' alt='Query Icon'>
+            </div>
+            <div class='tooltipButton' id='flagButton'></div>
+
+        </div>
+        <div class='tooltip'></div>
+    </div>
+    <script>
+        'use strict';
+        let json_data = '{{ (json_data | tojson | safe) if json_data is defined }}';
+        let error = '{{ error }}';
+        let message = '{{ (message | tojson | safe) if message is defined }}';
+        let searchBox = d3.select('.searchBox')
+            .style('border', '1px')
+            .style('border-color', 'red')
+            .attr('placeholder', error);
+        if (message) {
+            if (message !== '') {
+                alert(message)
+            }
+        }
+    </script>
+    <script src='{{ url_for('static', filename='js/tooltip.js') }}'></script>
+    <script src='{{ url_for('static', filename='js/node_selection.js') }}'></script>
+    <script src='{{ url_for('static', filename='js/node_params.js') }}'></script>
+    <script src='{{ url_for('static', filename='js/link_param.js') }}'></script>
+    <script src='{{ url_for('static', filename='js/graph.js') }}'></script>
+
+</body>
+</html>

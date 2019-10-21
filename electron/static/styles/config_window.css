@@ -1,0 +1,73 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.grid {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-gap: 0;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+}
+
+.configTitleContainer {
+    width: 100%;
+    height: 100%;
+    grid-row: 1;
+    grid-column: 1;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.configTitle {
+    font-weight: lighter;
+    font-size: 7em;
+    font-family: 'Tangerine', cursive;
+}
+
+.configForm {
+    grid-row: 2;
+    grid-column: 1;
+
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    margin: 0 auto auto;
+    width: 50%
+}
+
+.configFormInput {
+    border: none;
+    background-color: #191919;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.98);
+    padding: 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+    font-size: 1em;
+    width: 100%;
+    text-align: center;
+}
+
+.configFormSubmit {
+    border: none;
+    background-color: #191919;
+    height: 40px;
+    color: rgba(255, 255, 255, 0.98);
+    padding: 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.12), 0 0 2px rgba(0,0,0,0.24);
+    transition-duration: 0.4s;
+    font-size: 1em;
+}
+
+.configFormSubmit:hover {
+    background-color: lightgray;
+    color: rgba(0, 0, 0, 0.8);
+    border: none;
+}

@@ -1,0 +1,14 @@
+{
+  "name": "neht-graff-electron",
+  "version": "1.0.0",
+  "description": "Electron interface for Neht Graff",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Caleb Chesley",
+  "license": "BSD",
+  "devDependencies": {
+    "electron": "^6.0.1"
+  }
+}
