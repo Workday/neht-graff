@@ -1,11 +1,28 @@
 # Neht Graff
-New Efficient Hunting Techniques Graph Relational Analysis Fancy Forensics
-
+New Efficient Hunting Technique  Graph Relational Analysis Fancy Forensics
 
 A full-stack web application for visualizing force directed graphs with Neo4j and D3.js.
 
+Currently still rough and not ready for a production situation, but ready for the analyst to use. 
+
+# Example Usage 
+NODES and RELATIONSHIPS:
+![NODE_MAPPING](Examples/Example_Node_Mapping.png)
+
+You can map a FULL NETFLOW: 
+![FULL_NETFLOW](Examples/Mapping_NetFlow.png)
+
+You can do lots of NODES: 
+![BIG_PICTURE](Examples/Example_Larger_Analysis.png)
+
+You can map DNS to ANSWERS:
+![DNS_TO_ANSWER](Examples/Mapping_DNS_To_Answer.png)
+
+
 ## Start Guide
-Start Neo4j docker container and upload data with upload.py.  
+Start Neo4j docker container and upload data with upload.py. In upload.py some basic constraints are enabled 
+and example relationships that can be expressed in the data base. To get examples like above you will need to 
+add some more relationships using [cypher query language](https://neo4j.com/docs/cypher-refcard/current/). 
 
 TODO Add detailed explanation for designing schema and uploading logs.
 
