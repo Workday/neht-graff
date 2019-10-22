@@ -24,8 +24,6 @@ Start Neo4j docker container and upload data with upload.py. In upload.py some b
 and example relationships that can be expressed in the data base. To get examples like above you will need to 
 add some more relationships using [cypher query language](https://neo4j.com/docs/cypher-refcard/current/). 
 
-TODO Add detailed explanation for designing schema and uploading logs.
-
 2. Configure the following environment variables:
 
 |      Name      |                                    Expected Value                                   |
@@ -210,3 +208,8 @@ To run the electron app for development, navigate to `/electron` and run `npm st
 ## TODO 
     Generate legend based on link types
     Update log path imports to be taken from the configuration file
+    Add detailed explanation for designing schema and uploading logs.
+    
+## Contributors 
+    Max Hill - ComradePanda - doublepandasuit@gmail.com
+    Caleb Chesley - Penguin - caleb.chesley@gmail.com
