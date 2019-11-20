@@ -1,1 +1,6 @@
 /venv
+/data
+.idea/
+__pycache__/
+neo4j_utils/__pycache__/
+
