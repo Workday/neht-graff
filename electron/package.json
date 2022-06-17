@@ -9,6 +9,6 @@
   "author": "Caleb Chesley",
   "license": "BSD",
   "devDependencies": {
-    "electron": "^6.0.1"
+    "electron": "^15.5.5"
   }
 }
