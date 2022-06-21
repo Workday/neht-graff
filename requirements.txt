@@ -13,7 +13,7 @@ MarkupSafe==1.1.1
 neo4j==1.7.4
 neobolt==1.7.13
 neotime==1.7.4
-numpy==1.17.2
+numpy==1.22.0
 pandas==0.25.1
 pathtools==0.1.2
 prompt-toolkit==2.0.10
